@@ -1,0 +1,11 @@
+/** No CSS for this example */
+.makefancy {
+  margin : 16px 2px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-style: bold;
+  margin: 8px;
+}

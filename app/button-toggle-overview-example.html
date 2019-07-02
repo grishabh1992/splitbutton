@@ -1,0 +1,25 @@
+
+<form [formGroup]="form">
+  <h4>Content Changes From Chiild</h4>
+  <div class="makefancy">
+    {{form.value | json}}
+  </div>
+  <div class="makefancy">
+    <label>
+    With Only Simple Array
+    </label>
+    <split-button formControlName="section"  [options]="sections">
+    </split-button>
+</div>
+ <div class="makefancy">
+    <label>
+    With Object
+    </label>
+    <split-button formControlName="student" multiple="true" [label]="'label'" [value]="'value'" [options]="students">
+    </split-button>
+</div>
+</form>
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
