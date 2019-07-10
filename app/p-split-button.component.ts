@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef, Input } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, TemplateRef, ContentChild } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 /**
@@ -17,6 +17,12 @@ const CUSTOM_SPLIT_VALUE_ACCESSOR = {
 })
 
 export class SplitButtonComponent implements OnInit {
+  @ContentChild(TemplateRef)
+  template: TemplateRef<any>;
+
+  tamplateScope = {
+    lagel : ''
+  }
   // Form Control(Reactive Form) for p-autocomplete drop-down
   buttonControl: FormControl;
   // Contain all options which need to show in split buttons

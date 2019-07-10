@@ -1,3 +1,11 @@
 <mat-button-toggle-group [formControl]="buttonControl" [disabled]="disabled" [multiple]="multiple" name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle [checked]="isChecked(val)" *ngFor="let val of options" [value]="value ? val[value] : val">{{label ? val[label] : val}}</mat-button-toggle>
+  <mat-button-toggle [checked]="isChecked(val)" *ngFor="let val of options" [value]="value ? val[value] : val">
+    <span *ngIf="!template">{{label ? val[label] : val}}</span>
+    <ng-template [ngIf]="template">
+      <ng-container *ngTemplateOutlet="template;context:{item : val, label : label}"> 
+      </ng-container>
+    </ng-template>
+    
+    
+    </mat-button-toggle>
 </mat-button-toggle-group>

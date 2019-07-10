@@ -9,6 +9,9 @@
     With Only Simple Array
     </label>
     <split-button formControlName="section"  [options]="sections">
+      <ng-template let-item="item">
+          <span>{{item|json}}</span>        
+      </ng-template>
     </split-button>
 </div>
  <div class="makefancy">
